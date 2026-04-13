@@ -104,3 +104,26 @@ function resetState() {
     answerPart.removeChild(answerPart.firstChild);
   }
 }
+
+function selectAnswer(e) {
+  const selectedButton = e.target;
+  const correctBtn = selectedButton.dataset.correct === "true";
+
+  if (correctBtn) {
+    selectedButton.classList.add("correct");
+    score++;
+  }else{
+    selectedButton.classList.add("inCorrect");
+  }
+
+  Array.from(answerPart.children).forEach(btn =>{
+    if(btn.dataset.correct === "true"){
+      btn.classList.add("correct");
+    }
+
+    btn.disabled = true;
+  });
+  
+  startBtn.style.display = "block"
+}
+startQuiz();
