@@ -15,8 +15,25 @@
 .btn{
     display: block;
     margin-top: 1rem;
-    padding: 1rem 30rem 1rem 1rem;
+    padding: 1rem 1rem;
+    width: 40rem;
+    text-align: left;
     background: #edeaea;
     border-radius: 1rem;
     border: none;
+}
+
+#start{
+    margin-top: 1rem;
+    padding: 10px 2rem;
+    font-weight: bold;
+    font-size:medium;
+}
+
+.correct {
+    background-color: rgb(40, 209, 127);
+}
+
+.inCorrect{
+    background-color: rgb(217, 78, 78);
 }
