@@ -112,18 +112,43 @@ function selectAnswer(e) {
   if (correctBtn) {
     selectedButton.classList.add("correct");
     score++;
-  }else{
+  } else {
     selectedButton.classList.add("inCorrect");
   }
 
-  Array.from(answerPart.children).forEach(btn =>{
-    if(btn.dataset.correct === "true"){
+  Array.from(answerPart.children).forEach((btn) => {
+    if (btn.dataset.correct === "true") {
       btn.classList.add("correct");
     }
 
     btn.disabled = true;
   });
-  
-  startBtn.style.display = "block"
+
+  startBtn.style.display = "block";
 }
+
+function showScore() {
+  resetState();
+  questionPart.innerHTML = `your score is ${score} from ${questions.length} question`;
+  startBtn.innerHTML = "play again";
+  startBtn.style.display = "block";
+}
+
+function handleNextButton() {
+  questionIndex++;
+  if (questionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+}
+
+startBtn.addEventListener("click", () => {
+  if (questionIndex < questions.length) {
+    handleNextButton();
+  } else {
+    startQuiz();
+  }
+});
+
 startQuiz();
