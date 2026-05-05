@@ -4,7 +4,7 @@
 
 .header{
     margin-top: 0;
-    color: chocolate;
+    color: rgb(34, 32, 88);
 }
 
 .second-header{
@@ -24,16 +24,33 @@
 }
 
 #start{
-    margin-top: 1rem;
+    margin-top: 3rem;
     padding: 10px 2rem;
     font-weight: bold;
     font-size:medium;
+    cursor: pointer;
 }
 
 .correct {
     background-color: rgb(40, 209, 127);
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.3);
 }
 
 .inCorrect{
     background-color: rgb(217, 78, 78);
+}
+
+#container{
+    width: 45rem;
+    margin: 5rem auto 0 auto;
+    height: auto;
+    background-color: rgb(195, 218, 228);
+    border-radius: 2rem;
+}
+
+.end{
+    color: rgb(39, 25, 88);
+    font-size:larger ;
 }

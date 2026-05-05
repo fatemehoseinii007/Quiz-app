@@ -21,7 +21,7 @@ const questions = [
     question:
       "Navid: Did your father …………………………… to the radio? Reza: Yes, he did.",
     answers: [
-      { text: "accident", correct: true },
+      { text: "listen", correct: true },
       { text: "plaster", correct: false },
       { text: "bruise", correct: false },
       { text: "hurt", correct: false },
@@ -129,7 +129,7 @@ function selectAnswer(e) {
 
 function showScore() {
   resetState();
-  questionPart.innerHTML = `your score is ${score} from ${questions.length} question`;
+  questionPart.innerHTML = `🎉🎉your score is ${score} from ${questions.length} question🎉🎉`;
   startBtn.innerHTML = "play again";
   startBtn.style.display = "block";
 }
@@ -140,6 +140,7 @@ function handleNextButton() {
     showQuestion();
   } else {
     showScore();
+      questionPart.classList.add("end")
   }
 }
 
